@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>QR Message Generator</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>QR Message Generator</h1>
+
+        <label>Message</label>
+
+        <textarea
+            id="txtMessage"
+            placeholder="Type your message here..."
+            rows="8"></textarea>
+
+        <button id="btnGenerate">
+
+            Generate QR
+
+        </button>
+
+        <hr>
+
+        <h3>QR Preview</h3>
+
+        <div id="qrcode">
+
+        </div>
+
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
