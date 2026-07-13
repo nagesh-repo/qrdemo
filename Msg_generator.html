@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>QR Message Generator</title>
 
- <link rel="stylesheet" href="style.css">
-        
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -16,31 +18,42 @@
 
         <h1>QR Message Generator</h1>
 
-        <label>Message</label>
+        <p class="subtitle">
+            Type your message below and generate a QR code.
+            Anyone scanning the QR will be able to read your message
+            and reply via WhatsApp.
+        </p>
+
+        <label for="txtMessage">
+            Message
+        </label>
 
         <textarea
             id="txtMessage"
-            placeholder="Type your message here..."
-            rows="8"></textarea>
+            rows="10"
+            placeholder="Type your message here..."></textarea>
 
         <button id="btnGenerate">
-
             Generate QR
+        </button>
 
+        <button
+            id="btnDownload"
+            style="display:none; margin-top:15px;">
+            Download QR
         </button>
 
         <hr>
 
         <h3>QR Preview</h3>
 
-        <div id="qrcode">
-
-        </div>
+        <div id="qrcode"></div>
 
     </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <script src="app.js"></script>
 
 </body>
 
