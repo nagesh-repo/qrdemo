@@ -12,8 +12,8 @@ function generateQR() {
     }
 
     // CHANGE THIS AFTER GITHUB PAGES IS READY
-    const baseURL =
-        "https://YOUR_GITHUB_USERNAME.github.io/qrdemo/viewer.html";
+const baseURL =
+    "https://nagesh-repo.github.io/qrdemo/Viewer.html";
 
     const url =
         baseURL +
