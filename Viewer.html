@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
 
-<title>Message</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>QR Message</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -17,16 +21,17 @@
 
 <h1>📨 Message</h1>
 
-<div id="messageBox"
-style="
-padding:20px;
-border:1px solid #ddd;
-border-radius:8px;
-font-size:20px;
-min-height:150px;
-white-space:pre-wrap;
-margin-bottom:30px;
-"></div>
+<p class="subtitle">
+
+The sender has shared the following message with you.
+
+</p>
+
+<div id="messageBox">
+
+Loading message...
+
+</div>
 
 <button id="replyBtn">
 
@@ -40,23 +45,73 @@ Reply on WhatsApp
 
 const MY_PHONE = "919620742098";
 
+/*
+Replace the above number with your own.
+
+Format:
+
+CountryCode + Number
+
+Example
+
+919876543210
+
+No +
+
+No spaces
+*/
+
 const params = new URLSearchParams(window.location.search);
 
 const msg = params.get("msg");
 
+if(msg && msg.trim()!==""){
+
 document.getElementById("messageBox").innerText = msg;
+
+}
+else{
+
+document.getElementById("messageBox").innerText =
+"No message was found.";
+
+}
 
 document
 .getElementById("replyBtn")
-.onclick = function(){
+.addEventListener("click",function(){
+
+const reply =
+
+"Hi Nagesh,\n\n" +
+
+"Regarding your message:\n\n" +
+
+"\"" +
+
+msg +
+
+"\"\n\n" +
+
+"My reply is:\n";
 
 window.location.href =
-"https://wa.me/" +
-MY_PHONE +
-"?text=" +
-encodeURIComponent("Hi Nagesh,\n\nMy reply is:\n");
 
-};
+"https://wa.me/"
+
++
+
+MY_PHONE
+
++
+
+"?text="
+
++
+
+encodeURIComponent(reply);
+
+});
 
 </script>
 
