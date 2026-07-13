@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Message</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📨 Message</h1>
+
+<div id="messageBox"
+style="
+padding:20px;
+border:1px solid #ddd;
+border-radius:8px;
+font-size:20px;
+min-height:150px;
+white-space:pre-wrap;
+margin-bottom:30px;
+"></div>
+
+<button id="replyBtn">
+
+Reply on WhatsApp
+
+</button>
+
+</div>
+
+<script>
+
+const MY_PHONE = "919620742098";
+
+const params = new URLSearchParams(window.location.search);
+
+const msg = params.get("msg");
+
+document.getElementById("messageBox").innerText = msg;
+
+document
+.getElementById("replyBtn")
+.onclick = function(){
+
+window.location.href =
+"https://wa.me/" +
+MY_PHONE +
+"?text=" +
+encodeURIComponent("Hi Nagesh,\n\nMy reply is:\n");
+
+};
+
+</script>
+
+</body>
+
+</html>
